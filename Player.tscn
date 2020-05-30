@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.25, -30.5 )
+frames = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="lblTest" type="Label" parent="."]
+margin_left = -19.0
+margin_top = -55.0
+margin_right = 21.0
+margin_bottom = -41.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
